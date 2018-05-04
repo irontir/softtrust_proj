@@ -1,0 +1,89 @@
+﻿
+.form1, .form2 {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    border-radius: 10px 10px 10px 10px;
+
+    padding: 2em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset;
+    width: 450px;
+    height: auto;
+}
+label {
+    margin-right: 0.10em;
+    width: 10em;
+    float: left;
+    text-align: left;
+    display: block;
+    font-family: "Century Gothic",Century Gothic,serif;
+}
+textarea{
+    resize: none;
+}
+textarea.ng-touched.ng-invalid {
+        border: solid red 1px;
+        color: rgba(0,142,198,1);
+        -o-text-overflow: clip;
+        text-overflow: clip;
+    }
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid {
+    border: solid red 1px;
+    color: rgba(0,142,198,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: url("http://enjoycss.com/bg-img/custom/35484-96qu8b.png"), rgba(249,169,169,1);
+    background-repeat: no-repeat;
+    background-position: 94% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    background-size: contain;
+}
+textarea.ng-touched.ng-valid {
+    border: solid green 1px;
+    color: rgba(0,142,198,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+}
+input.ng-touched.ng-valid, select.ng-touched.ng-valid {
+    border: solid green 1px;
+    color: rgba(0,142,198,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: url("http://enjoycss.com/bg-img/custom/35484-v37m1e.png"), rgba(227,244,231,1);
+    background-repeat: no-repeat;
+    background-position: 96% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+
+    background-size: contain;
+}
+.form_inputs {
+    width: 303px;
+    height: 30px;
+    font-family: "Century Gothic",Century Gothic,serif;
+    padding-left: 22px;
+    border: 1px solid silver;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+}
+.form_textares {
+    width: 303px;
+    font-family: "Century Gothic",Century Gothic,serif;
+    padding-left: 22px;
+    border: 1px solid silver;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+}
+.g-recaptcha {
+    width: 303px;
+}
+
+.form_buttons {
+    position: center;
+    margin: 0 38% 0 32%;
+}

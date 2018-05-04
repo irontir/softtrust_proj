@@ -1,0 +1,80 @@
+﻿<div class="borders">
+    <div class="form1" *ngIf="form1">
+        <div style="padding: 5px;">
+            <label class="form_labels">Ваше имя:</label>
+            <input class="form_inputs" name="name" [(ngModel)]="user.name" placeholder="Иванов Андрей Иванович" #name="ngModel" required />
+
+        </div>
+
+        <div style="padding: 5px;">
+            <label class="form_labels">Ваш E-mail   :</label>
+            <input class="form_inputs" type="email" name="email" [(ngModel)]="user.email" placeholder="example@mail.ru" #email="ngModel" required pattern="[a-zA-Z_.0-9-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" />
+
+        </div>
+
+        <div style="padding: 5px;">
+            <label class="form_labels">Ваш телефон:</label>
+            <input class="form_inputs" id="phone1" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required maxlength="10" pattern="[0-9]{10}" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')" placeholder="9008007060"/>
+            <script>
+                $(function () {
+                    //2. Получить элемент, к которому необходимо добавить маску
+                    $("#phone1").mask("8(999) 999-9999");
+                });
+            </script>
+
+        </div>
+
+
+        <div style="padding: 5px;">
+            <label class="form_labels">Тема: </label>
+            <select class="form_inputs" name="theme" [(ngModel)]="editedMessage.themeid" #theme="ngModel" required placeholder="Выберите тему">
+                <option *ngFor="let t of themes" value="{{t?.id}}" >
+                    <ng-template [ngIf]="theme?.id != t.id" [ngIfElse]="edit">{{t?.id}}) {{t?.name}}</ng-template>
+                </option>
+            </select>
+        </div>
+
+
+        <div style="padding: 5px;">
+            <label class="form_labels">Обращение:</label>
+            <textarea class="form_textares" cols="35" rows="5" size="40" name="texts" placeholder="Введите ваше обращение" [(ngModel)]="editedMessage.text" #texts="ngModel" required resize="none"></textarea>
+        </div>
+
+        <div>
+            <label class="form_labels">Капча:</label>
+            <form>
+
+                <div class="g-recaptcha" data-sitekey="6LdBA1EUAAAAACaerCnMR8dfuF-HEaqMGbafaSbi"></div>
+                <br />
+            </form>
+            <br />
+
+            <br />
+        </div>
+        <button class="form_buttons" (click)="save()" [disabled]="name.invalid || email.invalid || phone.invalid|| theme.invalid || texts.invalid">Отправить!</button>
+
+    </div>
+
+
+    <div class="form2" *ngIf="form2">
+
+        <div>
+            Имя: {{user.name}}, id={{id_user}}
+        </div>
+        <div>
+            Email: {{user.email}}
+        </div>
+        <div>
+            Телефон: {{user.phone}}
+        </div>
+        <div>
+            Тема: {{editedMessage.themeid}}
+        </div>
+        <div>
+            Сообщение: {{editedMessage.text}}
+        </div>
+        <!--<input class="form_buttons" type="reset" value="Назад!" />-->
+        <input class="form_buttons" type="button" value="Назад" onClick="document.location.reload(true)">
+    </div>
+</div>
+
